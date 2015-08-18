@@ -30,12 +30,10 @@ public class ServerController {
 	public void answerRequest(String input){
 		String toPrint = "";
 		
-		//if(!greeting && (input.compareTo("HELO") == 0) ){
 		if( !greeting && (processHELO(input)) ){
 			greeting = true;
 			toPrint = "210: server heard you and is ready for commands";
 			
-		//}else if(greeting && (input.compareTo("HELO") == 0) ){
 		}else if( greeting && (processHELO(input)) ){
 			toPrint = "211: you've already said HELO";
 			
@@ -54,13 +52,12 @@ public class ServerController {
 				toPrint = processCommand(input);
 			}
 			
-			
 		}else{
 			toPrint = "000: you need to say HELO first";
 		}
 		
 		os.println(toPrint);
-	}//end answerRequest()
+	}
 	
 	public Boolean processHELO(String input){
 		Boolean welcome = false;
@@ -111,7 +108,6 @@ public class ServerController {
 				argCounter++;
 			}
 		}
-		//System.out.println("scanner: forEcho = " + forEcho);
 		
 		if(command.compareTo("NANANA") == 0){ //the bat signal!
 			answer = "Status: NANANANA...BATMAN!";

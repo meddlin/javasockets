@@ -17,12 +17,10 @@ public class Client {
 		PrintWriter out = null;
 		
 		try{
-			//System.out.println("HOSTNAME TEST: " + InetAddress.getLocalHost().getHostName());
 			heloHost = InetAddress.getLocalHost().getHostName();
 		}catch (UnknownHostException e){
 			System.out.println("error getting hostname");
 		}
-		
 		
 		System.out.println("Connect using......DPRP Protocol -- Client ver. 13.37");
 		
@@ -42,18 +40,6 @@ public class Client {
 			try{
 				responseLine = input.readLine();
 				System.out.println(responseLine);
-				
-				/*while(smtpSocket != null){
-					userInput = stdIn.readLine();
-					if(userInput.compareTo("BYE") == 0){
-						out.println(userInput);
-						break;
-					}else{
-						out.println(userInput);
-						responseLine = input.readLine();
-						System.out.println(responseLine);
-					}
-				}*/
 				
 				System.out.println();
 				System.out.println("Sending HELO " + heloHost);
@@ -104,24 +90,3 @@ public class Client {
 		}//end if
 	}
 }
-
-
-
-
-/*while((userInput = stdIn.readLine()) != null){
-out.println(userInput); //sends user input to server
-responseLine = input.readLine(); //grabs response from server
-
-while( (temp = input.readLine()) != null ){
-	responseLine = responseLine + temp;
-}
-
-System.out.println(responseLine);
-}*/
-/*while(stdIn != null){
-userInput = stdIn.readLine();
-out.println(userInput);
-while( (temp = input.readLine()) != null ){
-	responseLine = responseLine + temp;
-}
-}*/

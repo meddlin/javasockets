@@ -33,14 +33,10 @@ public class Server {
 			
 			while(true){
 				line = is.readLine();
-				/*System.out.println("line: " + line);
-				System.out.println("os: " + os);
-				System.out.println("is: " + is);
-				System.out.println("clientSocket: " + clientSocket);*/
 				servControl.answerRequest(line);
 			}
 		}catch(IOException e){
 			System.out.println(e);
 		}
-	}//end main
-}//end CLASS
+	}
+}
